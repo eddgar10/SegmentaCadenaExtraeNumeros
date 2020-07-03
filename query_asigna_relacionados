@@ -1,0 +1,13 @@
+STRING cadena = "2241050834,GONZALEZ CORTES JOSE RAFAEL,2221170716,GONZALEZ CORTES JOSE RAFAEL,2241071595,GONZALEZ CORTES JOSE RAFAEL,2241038384,GONZALEZ CORTES JOSE RAFAEL";
+
+de 'cadena' se debe extraer solo los numeros telefonicos a 10 digitos para eso la cadena entrante se aplicara un EXPLODE() ya que se puede usar el caracter ',' como delimitador entre numero y texto, dando paso al siguiente arreglo:
+
+$array [2241050834 GONZALEZ CORTES JOSE RAFAEL 2221170716 GONZALEZ CORTES JOSE RAFAEL 2241071595 GONZALEZ CORTES JOSE RAFAEL 2241038384 GONZALEZ CORTES JOSE RAFAEL]
+
+se nota un patron en el cual los indices impares contienen numeros telefonicos y los indices pares texto que no necesitamos por lo que al vector $array se le asignara "" (cadena vacia) en los indices que son impares dando salida:
+
+$array [2241050834 2221170716 2241071595 2241038384]
+
+una vez teniendo ese arreglo se entra en un switch case, donde dependiendo del numero de elementos de $array/2 sera el numero de inserciones hacia la tabla mysql, se manejara un rango de 1 a 15 numeros relacionados por numero de cuenta
+
+
